@@ -1,22 +1,21 @@
 /**
- * Calcula os impostos sobre operações de compra e venda de ativos financeiros.
+ * Calculates taxes on financial asset purchase and sale operations.
  *
- * @param {Array} operations - Lista de operações a serem processadas.
- * @param {string} operations[].operation - Tipo da operação ("buy" ou "sell").
- * @param {number} operations[].unitCost - Preço unitário do ativo na operação.
- * @param {number} operations[].quantity - Quantidade de ativos negociados.
- * @param {Object} optionalSettings - Configurações de tributação (pode ser passada externamente).
- * @param {number} optionalSettings.taxationValue - Alíquota usada para deduzir imposto do lucro.
- * @param {number} optionalSettings.maximumSalesValueForNonTaxation - Valor máximo de venda para não tributação
- * @returns {Array} Retorna uma lista de objetos com o valor do imposto calculado para cada operação.
- * @throws {Error} Se a operação não for "buy" ou "sell".
- * @throws {Error} Se tentar vender sem ter estoque disponível.
+ * @param {Array} operations - List of operations to be processed.
+ * @param {string} operations[].operation - Type of operation ("buy" or "sell").
+ * @param {number} operations[].unitCost - Unit price of the asset in the operation.
+ * @param {number} operations[].quantity - Quantity of assets traded.
+ * @param {Object} optionalSettings - Taxation settings (can be passed externally).
+ * @param {number} optionalSettings.taxationValue - Tax rate used to deduct tax from profit.
+ * @param {number} optionalSettings.maximumSalesValueForNonTaxation - Maximum sales value for tax exemption.
+ * @returns {Array} Returns a list of objects with the calculated tax value for each operation.
+ * @throws {Error} If the operation is not "buy" or "sell".
+ * @throws {Error} If attempting to sell without available stock.
  *
  * @description
- * - A alíquota do imposto padrão é de **20%** sobre o lucro tributável.
- * - O valor padrão de vendas de até **R$ 20.000,00** no total não são tributadas.
- * - Prejuízos acumulados podem ser usados para compensar lucros futuros e reduzir a tributação.
- *
+ * - The default tax rate is **20%** on taxable profit.
+ * - Sales up to **R$ 20,000.00** in total are tax-exempt.
+ * - Accumulated losses can be used to offset future profits and reduce taxation.
  * @example
  * const operations = [
  *   { operation: "buy", "unit-cost": 10.00, quantity: 100 },

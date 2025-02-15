@@ -1,7 +1,7 @@
 const assert = require('assert')
 const taxCalculate = require('./tax-calculate')
 
-console.log("\x1b[34m%s\x1b[0m", "Executando testes...")
+console.log("\x1b[34m%s\x1b[0m", "Running the tests...")
 
 function test(description, fn) {
     try {
@@ -122,4 +122,4 @@ test('Caso #8', () => {
     )
 })
 
-console.log("\x1b[34m%s\x1b[0m", "Testes finalizados!")
+console.log("\x1b[34m%s\x1b[0m", "Tests finished successfuly!")

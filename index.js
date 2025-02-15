@@ -1,7 +1,7 @@
 const readline = require("readline")
 const taxCalculate = require('./tax-calculate')
 
-console.log("\x1b[35m%s\x1b[0m", "Entre com uma lista de operações (ou digite 1 para sair):")
+console.log("\x1b[35m%s\x1b[0m", "Type an operation list (or type 1 do quit):")
 
 const stream = readline.createInterface({
     input: process.stdin
@@ -39,6 +39,6 @@ process.on('SIGINT', () => {
 })
 
 function closeConnection() {
-    console.log("\x1b[34m%s\x1b[0m", "Broker finalizado!")
+    console.log("\x1b[34m%s\x1b[0m", "Broker finished successfuly!")
     stream.close()
 }
